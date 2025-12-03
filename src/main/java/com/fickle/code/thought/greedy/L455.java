@@ -1,4 +1,4 @@
-package com.fickle.code.greedy;
+package com.fickle.code.thought.greedy;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package com.fickle.code.dynamic;
+package com.fickle.code.thought.dynamic;
 
 /**
  * @author Administrator

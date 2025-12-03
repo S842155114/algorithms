@@ -24,5 +24,6 @@ import com.fickle.code.leetcode.ListNode;
 public class L23 {
     public ListNode mergeKLists(ListNode[] lists) {
 
+        return null;
     }
 }

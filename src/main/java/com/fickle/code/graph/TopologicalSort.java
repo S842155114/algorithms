@@ -8,13 +8,15 @@ import java.util.List;
 /**
  * 当且仅当一个有向图为有向无环图(directed acyclic graph，或称DAG)时，才能得到对应于该图的拓扑排序。
  * 要想完成拓扑排序，我们每次都应当从入度为0的结点开始遍历。因为只有入度为0的结点才能够成为拓扑排序的起点。
+ *
  * @author Administrator
  * @apiNote com.fickle.code.graph
  */
 public class TopologicalSort {
     /**
      * 获取输入有向图的拓扑排序
-     * @param n 图中节点的数量
+     *
+     * @param n     图中节点的数量
      * @param edges 输入有向图的边列表表示，每条边的格式为 {from, to}
      * @return 图的拓扑排序，存储在List<Integer>中
      */
@@ -24,7 +26,6 @@ public class TopologicalSort {
 
         // 计算每个节点的入度
         for (int[] edge : edges) {
-    int from = edge[0];
             int to = edge[1];
             inDegree[to]++;
         }
@@ -44,9 +45,10 @@ public class TopologicalSort {
             for (int[] edge : edges) {
                 int from = edge[0];
                 int to = edge[1];
-
+                // 入度顶点为当前节点则处理
                 if (from == curr) {
                     inDegree[to]--;
+                    // 将入度为0节点加入队列
                     if (inDegree[to] == 0) {
                         deque.offer(to);
                     }

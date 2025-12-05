@@ -1,4 +1,4 @@
-package com.fickle.code.thought.dynamic;
+package com.fickle.code.thought.dynamic.fibonacci;
 
 /**
  * 打家劫舍

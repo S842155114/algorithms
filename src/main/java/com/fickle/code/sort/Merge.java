@@ -23,7 +23,7 @@ package com.fickle.code.sort;
 public class Merge {
 
     /*
-     * 将一个数组中的两个相邻有序区间合并成一个
+     * 将一个数组中的两个相邻有序区间合并成一个 - 插入排序
      *
      * 参数说明:
      *     a -- 包含两个有序区间的数组
@@ -53,6 +53,40 @@ public class Merge {
             }
             j++;
         }
+
+    }
+
+    /*
+     * 将一个数组中的两个相邻有序区间合并成一个 - 比较排序
+     *
+     * 参数说明:
+     *     a -- 包含两个有序区间的数组
+     *     start -- 第1个有序区间的起始地址。
+     *     mid   -- 第1个有序区间的结束地址。也是第2个有序区间的起始地址。
+     *     end   -- 第2个有序区间的结束地址。
+     */
+    public static void merge1(int[] a, int start, int mid, int end) {
+        int[] tmp = new int[end-start+1];    // tmp是汇总2个有序区的临时区域
+        int i = start;            // 第1个有序区的索引
+        int j = mid + 1;        // 第2个有序区的索引
+        int k = 0;                // 临时区域的索引
+
+        while(i <= mid && j <= end) {
+            if (a[i] <= a[j])
+                tmp[k++] = a[i++];
+            else
+                tmp[k++] = a[j++];
+        }
+
+        while(i <= mid)
+            tmp[k++] = a[i++];
+
+        while(j <= end)
+            tmp[k++] = a[j++];
+
+        // 将排序后的元素，全部都整合到数组a中。
+        for (i = 0; i < k; i++)
+            a[start + i] = tmp[i];
 
     }
 

@@ -2,6 +2,7 @@ package com.fickle.code.thought.dynamic.backpack;
 
 /**
  * 0-1背包问题的通用场景
+ *
  * @author Administrator
  * @apiNote com.fickle.code.thought.dynamic.backpack
  */
@@ -9,9 +10,10 @@ public class Main {
     public int knapsack(int W, int N, int[] weights, int[] values) {
         int[][] dp = new int[N + 1][W + 1];
         for (int i = 1; i <= N; i++) {
+            // 第i个数 的体积和价值
             int w = weights[i - 1], v = values[i - 1];
             for (int j = 1; j <= W; j++) {
-                if (j >= w) {
+                if (j >= w) { // 判断当前j是否可以放入w
                     dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - w] + v);
                 } else {
                     dp[i][j] = dp[i - 1][j];
@@ -34,7 +36,7 @@ public class Main {
         for (int i = 1; i <= N; i++) {
             int w = weights[i - 1], v = values[i - 1];
             for (int j = W; j >= 1; j--) {
-                if (j >= w) {
+                if (j >= w) { // 在当前体积下的最大值，如果j < w则不需要计算，沿用上次的
                     dp[j] = Math.max(dp[j], dp[j - w] + v);
                 }
             }

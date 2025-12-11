@@ -21,6 +21,8 @@
  *  所以说，动态规划本质是一个空间换时间的思想，保存了子问题的解，避免重复计算。这是动态规划区别于分治法的关键
  *
  *
+ * https://pdai.tech/md/algorithm/alg-core-dynamic.html
+ *
  * @author Administrator
  * @apiNote com.fickle.code.dynamic
  */

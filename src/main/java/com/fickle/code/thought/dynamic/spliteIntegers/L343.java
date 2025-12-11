@@ -16,6 +16,8 @@ package com.fickle.code.thought.dynamic.spliteIntegers;
  * 输出: 36
  * 解释: 10 = 3 + 3 + 4, 3 × 3 × 4 = 36。
  *
+ * 此时主要明确的状态是[1...n]的数组中，每一个数拆分的最大乘积，并记录，以空间换时间
+ *
  * @author Administrator
  * @apiNote com.fickle.code.thought.dynamic.spliteIntegers
  */
@@ -36,9 +38,12 @@ public class L343 {
      */
     public int integerBreak(int n) {
         int[] dp = new int[n + 1];
+        // dp[i]是结果
         for (int i = 2; i <= n; i++) {
             int curMax = 0;
+            // j是可能要将i拆分的数
             for (int j = 1; j < i; j++) {
+                // 计算拆分为j和i-j时的最大值
                 curMax = Math.max(curMax, Math.max(j * (i - j), j * dp[i - j]));
             }
             dp[i] = curMax;

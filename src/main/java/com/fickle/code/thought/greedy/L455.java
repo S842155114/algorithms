@@ -3,6 +3,7 @@ package com.fickle.code.thought.greedy;
 import java.util.Arrays;
 
 /**
+ * 分配饼干
  * @author Administrator
  * @apiNote com.fickle.code.greedy
  */

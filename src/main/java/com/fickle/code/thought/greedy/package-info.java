@@ -7,6 +7,7 @@
      * 找出适合的贪心策略
      * 求解每一个子问题的最优解
      * 将局部最优解堆叠成全局最优解
+ *
  * @author Administrator
  * @apiNote com.fickle.code.greedy
  */
